@@ -1,0 +1,73 @@
+@import 'nib'
+
+global-reset()
+
+bg=#D4EDEE
+textcolor=lighten(#333,10%)
+
+body
+    font-family 'helvetica'
+    font-size 18px
+    color textcolor
+    background bg
+
+#todo-list-wrapper
+    width 400px
+    margin 50px auto 0 auto
+    background white
+    padding 20px
+    border-radius(5px)
+    box-shadow(1px 1px 7px grey)
+
+
+    input.todo-list-input
+        color textcolor
+        width 380px
+        padding 10px
+        //margin-left -5px
+        font-size 1em
+        font-family 'helvetica'
+        border 1px solid lightgrey
+        outline none
+
+        background lightyellow
+        box-shadow 1px 1px 4px lightgrey inset
+
+
+    ul.todo-list
+
+        li.task
+            padding 10px
+            border-bottom 1px solid lightgrey
+            clearfix()
+
+            .task-checkbox
+                float left
+
+            .task-name
+                margin-left .7em
+                float left
+
+            .task-close
+                float right
+                -webkit-transform:rotate(45deg);
+                cursor pointer
+                font-weight bold
+                display none
+                color red
+
+            &.completed
+                color lighten(textcolor, 70%)
+
+            &:hover
+                .task-close
+                    display block
+
+    .todo-list-footer
+        font-size .8em
+        text-align center
+        margin-top 10px
+        .number-completed
+            color lighten(textcolor, 60%)
+        .number-done
+            color textcolor
